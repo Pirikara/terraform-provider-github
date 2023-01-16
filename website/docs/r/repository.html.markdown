@@ -21,7 +21,7 @@ resource "github_repository" "example" {
 
   template {
     owner                = "github"
-    repository           = "terraform-module-template"
+    repository           = "terraform-template-module"
     include_all_branches = true
   }
 }
@@ -62,6 +62,8 @@ The following arguments are supported:
 
 * `has_issues` - (Optional) Set to `true` to enable the GitHub Issues features
   on the repository.
+
+* `has_discussions` - (Optional) Set to `true` to enable GitHub Discussions on the repository. Defaults to `false`.
 
 * `has_projects` - (Optional) Set to `true` to enable the GitHub Projects features on the repository. Per the GitHub [documentation](https://developer.github.com/v3/repos/#create) when in an organization that has disabled repository projects it will default to `false` and will otherwise default to `true`. If you specify `true` when it has been disabled it will return an error.
 
