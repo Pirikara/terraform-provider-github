@@ -3,7 +3,7 @@ package github
 import (
 	"context"
 
-	"github.com/google/go-github/v49/github"
+	"github.com/google/go-github/v50/github"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
@@ -18,9 +18,10 @@ func resourceGithubActionsOrganizationOIDCSubjectClaimCustomizationTemplate() *s
 		},
 		Schema: map[string]*schema.Schema{
 			"include_claim_keys": {
-				Type:     schema.TypeList,
-				Required: true,
-				MinItems: 1,
+				Type:        schema.TypeList,
+				Required:    true,
+				MinItems:    1,
+				Description: "A list of OpenID Connect claims.",
 				Elem: &schema.Schema{
 					Type: schema.TypeString,
 				},
